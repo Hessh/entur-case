@@ -17,6 +17,7 @@ export default async function handler(req, res) {
     }, { headers: headers });
     res.status(200).json(response.data);
   } catch (error) {
+    console.log(error)
     res.status(500).json({ error: 'Error fetching data' });
   }
 }
