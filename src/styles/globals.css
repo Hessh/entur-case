@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary-gray: #f4f7fd;
+  --color-title: #12263a;
+  --color-text: #3c4c5b;
+  --title-font: 'DM Sans', sans-serif;
+  --text-font: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+html,
+body {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: auto;
+  text-rendering: optimizeLegibility;
+  font-family: var(--text-font);
+  background-color: var(--color-primary-gray);
+}
+
+@media screen and (min-width: 768px) {
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-title);
+  margin: 0;
+  font-family: var(--title-font);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: var(--text-font);
+}
+
+figure,
+figcaption,
+ol,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
