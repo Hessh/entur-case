@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      gridTemplateColumns: {
+        'layout': '20% 60% 20%',
+      },
       colors: {
         "primary-blue": "#05426a",
         "accent-blue": "#092130",
