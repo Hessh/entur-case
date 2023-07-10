@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faTrain, faTram, faTrainSubway } from '@fortawesome/free-solid-svg-icons';
+import { faBus, faTrain, faTram, faTrainSubway, faFerry } from '@fortawesome/free-solid-svg-icons';
 
 const SearchResults = ({ searchResults, onResultSelect }) => {
   if (searchResults.length === 0) {
@@ -14,6 +14,8 @@ const SearchResults = ({ searchResults, onResultSelect }) => {
       </div>
     );
   }
+
+  console.log(searchResults)
 
   return (
     <>
@@ -33,10 +35,11 @@ const SearchResults = ({ searchResults, onResultSelect }) => {
               }
             </div>
             <div>
-              {properties?.category.includes('onstreetBus') && <FontAwesomeIcon icon={faBus} size='xl' className="ml-2 text-red-500" />}
+              {(properties?.category.some(category => category === 'onstreetBus' || category === 'busStation')) && <FontAwesomeIcon icon={faBus} size='xl' className="ml-2 text-red-500" />}
               {properties?.category.includes('onstreetTram') && <FontAwesomeIcon icon={faTram} size='xl' className="ml-2 text-blue-500" />}
               {properties?.category.includes('railStation') && <FontAwesomeIcon icon={faTrain} size='xl' className="ml-2 text-primary-blue" />}
               {properties?.category.includes('metroStation') && <FontAwesomeIcon icon={faTrainSubway} size='xl' className="ml-2 text-orange-600" />}
+              {(properties?.category.some(category => category === 'ferryStop' || category === 'harbourPort')) && <FontAwesomeIcon icon={faFerry} size='xl' className="ml-2 text-blue-900" />}
             </div>
           </li>
         ))}

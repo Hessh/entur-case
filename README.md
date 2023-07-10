@@ -1,41 +1,28 @@
-# entur-case
-Entur-Case: A React website using Entur's API's to display real-time departure information from various stops throughout the city.
+# Entur Case oppgave for NLT
+Dette er en applikasjon for å finne stoppesteder og se avgangstider ved hjelp av Entur's Geocoder og Journey Planner API-er. Prosjektet er bygget med Yarn, Next.js og Tailwind CSS.
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Installasjon
+Klon prosjektet fra GitHub: `git clone https://github.com/din-repo-url`
 
-## Getting Started
+Gå inn i prosjektmappen: cd `entur-case`
 
-First, run the development server:
+Installer avhengigheter med Yarn: `yarn install`
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Start utviklingsserveren: `yarn dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Applikasjonen vil kjøre på http://localhost:3000.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Beskrivelse
+Denne applikasjonen lar deg søke etter stoppesteder og se avgangstider for offentlig transport. Du kan søke ved å skrive inn stedsnavn i søkefeltet. Resultatene vises som forslag mens du skriver, og du kan klikke på et forslag for å se avgangstider for det valgte stoppestedet.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Applikasjonen bruker Entur's Geocoder API for å finne stedsnavn og Entur's Journey Planner API for å hente avgangstider. Søkeresultatene og avgangstidene oppdateres i sanntid.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Teknologier og verktøy
+Yarn: Et pakkehåndteringssystem for å installere avhengigheter og kjøre skript.
+Next.js: Et rammeverk for React-baserte applikasjoner med innebygd server-side rendering og ruting.
+Tailwind CSS: Et CSS-rammeverk for å bygge responsivt brukergrensesnitt.
+Entur Geocoder API: En API for å geokode stedsnavn og finne stoppesteder.
+Entur Journey Planner API: En API for å hente avgangstider og reiseinformasjon for offentlig transport.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Lisens
+Dette prosjektet er lisensiert under MIT Lisensen.

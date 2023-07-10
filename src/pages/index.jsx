@@ -4,7 +4,7 @@ import Image from 'next/image';
 import axios from 'axios';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faTrain, faTram, faTrainSubway } from '@fortawesome/free-solid-svg-icons';
+import { faBus, faTrain, faTram, faTrainSubway, faFerry } from '@fortawesome/free-solid-svg-icons';
 
 import Layout from '@/components/Layout/Layout'
 import SearchInput from '@/components/SearchInput/SearchInput';
@@ -106,13 +106,6 @@ const Home = () => {
     }
   };
 
-  // Håndter søkefeil for inspisering
-  useEffect(() => {
-    if (searchError) {
-      console.log(searchError)
-    }
-  }, [searchError]);
-
   return (
     <Layout>
       <div className="container md:min-h-[85vh] md:max-h-[85vh] overflow-y-clip mx-auto py-8 md:grid md:grid-cols-2 ">
@@ -146,6 +139,10 @@ const Home = () => {
                 <li className='flex flex-col justify-center items-center'>
                   <FontAwesomeIcon icon={faTrainSubway} size='xl' className="text-orange-600" />
                   <p className='text-xs font-light mt-1'>T-bane</p>
+                </li>
+                <li className='flex flex-col justify-center items-center'>
+                  <FontAwesomeIcon icon={faFerry} size='xl' className="text-blue-900" />
+                  <p className='text-xs font-light mt-1'>Ferje</p>
                 </li>
               </ul>
             </>

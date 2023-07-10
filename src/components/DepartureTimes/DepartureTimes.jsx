@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 import Image from 'next/image';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBus, faTrain, faTram, faTrainSubway, faRocket, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
+import { faBus, faTrain, faTram, faTrainSubway, faFerry, faRocket, faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 const DepartureTimes = ({ stopPlace }) => {
   const [showSituations, setShowSituations] = useState(false);
+
+  // Sorter avganger etter tid
+  stopPlace.estimatedCalls.sort((a, b) => {
+    return new Date(a.expectedDepartureTime) - new Date(b.expectedDepartureTime);
+  });
 
   // Formater tid for avgangstider
   function formatTime(date) {
@@ -51,6 +56,10 @@ const DepartureTimes = ({ stopPlace }) => {
                   icon = faTrainSubway;
                   bgColor = 'bg-orange-600'
                 break;
+                case 'water':
+                  icon = faFerry;
+                  bgColor = 'bg-blue-900'
+                break;
               default:
                 icon = faRocket;
                 bgColor = 'bg-gray-500'
@@ -60,7 +69,7 @@ const DepartureTimes = ({ stopPlace }) => {
               <li
                 key={call?.serviceJourney.id}
                 className={`p-5 border border-gray-300 mb-4 rounded shadow-box bg-white ${call.situations.length > 0 && "cursor-pointer hover:shadow-hover hover:bg-blue-50"}`}
-                onClick={() => toggleSituations(call.aimedDepartureTime)}
+                onClick={() => toggleSituations(call.expectedDepartureTime)}
               >
                 <div className="flex justify-between items-center">
                   <div className="flex flex-row">
@@ -74,12 +83,12 @@ const DepartureTimes = ({ stopPlace }) => {
                     </div>
                   </div>
                   <span className="flex items-center justify-end text-text text-base font-semibold">
-                    {call?.aimedDepartureTime
-                      ? formatTime(new Date(call?.aimedDepartureTime))
-                      : formatTime(new Date(call?.expectedDepartureTime))}
+                    {call?.expectedDepartureTime
+                      ? formatTime(new Date(call?.expectedDepartureTime))
+                      : formatTime(new Date(call?.aimedDepartureTime))}
                   </span>
                 </div>
-                {showSituations === call.aimedDepartureTime && call.situations.length > 0 && call.situations[0].summary.filter(situation => situation.language === 'no').map((situation) => {
+                {showSituations === call.expectedDepartureTime && call.situations.length > 0 && call.situations[0].summary.filter(situation => situation.language === 'no').map((situation) => {
                   return (
                     <div key={situation.value} className="flex flex-row mt-2 border border-gray-200 p-2 bg-yellow-200">
                       <FontAwesomeIcon icon={faCircleInfo} size='lg' className="mr-2" />
