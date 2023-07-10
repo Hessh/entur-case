@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        'layout': '20% 60% 20%',
+        'layout': '20% 70% 10%',
       },
       colors: {
         "primary-blue": "#05426a",
@@ -21,11 +21,15 @@ module.exports = {
       minHeight: {
         'full-header': 'calc(100vh - 4rem - 3.25rem)',
       },
+      maxHeight: {
+        'full-header': 'calc(100vh - 4rem - 3.25rem)',
+      },
       borderRadius: {
         radius: '4px'
       },
       boxShadow: {
-        box: '#00000010 0px 2px 10px;'
+        box: '#00000010 0px 2px 10px;',
+        hover: '#00000020 0px 2px 10px;'
       }
     },
   },

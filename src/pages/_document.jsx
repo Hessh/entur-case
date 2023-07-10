@@ -10,8 +10,8 @@ class MyDocument extends Document {
     return (
       <Html lang='nb-NO'>
         <Head>
-          <link rel='icon' href='/next.svg' sizes='512x512' />
-          <link rel='apple-touch-icon' href='/next.svg' />
+          <link rel='icon' href='/logos/next.svg' sizes='512x512' />
+          <link rel='apple-touch-icon' href='/logos/next.svg' />
         </Head>
         <body>
           <Main />

@@ -3,7 +3,7 @@ export const GET_DEPARTURES_BY_PLACEID = `
     stopPlace(id: $id) {
       name
       id
-      estimatedCalls(numberOfDepartures: 20) {
+      estimatedCalls(numberOfDepartures: 5) {
         expectedDepartureTime
         aimedDepartureTime
         destinationDisplay {
@@ -14,6 +14,12 @@ export const GET_DEPARTURES_BY_PLACEID = `
           line {
             publicCode
             transportMode
+          }
+        }
+        situations {
+          summary {
+            value
+            language
           }
         }
       }

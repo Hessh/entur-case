@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import disableScroll from '../../utils/disableScroll'
 import useWindowSize from '../../utils/windowSize'
+
+import Link from 'next/link'
 
 const Layout = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false)
@@ -42,9 +44,9 @@ const Layout = ({ children }) => {
             {isMobile && (
               <button type='button' className='flex items-center justify-center' onClick={toggleMenu}>
                 {showMenu ? (
-                  <FontAwesomeIcon icon={['fas', 'times']} size='lg' />
+                  <FontAwesomeIcon icon={faTimes} size="lg" />
                 ) : (
-                  <FontAwesomeIcon icon={['fas', 'bars']} size='lg' />
+                  <FontAwesomeIcon icon={faBars} size="lg" />
                 )}
               </button>
             )}
@@ -55,12 +57,6 @@ const Layout = ({ children }) => {
                   className='w-full py-6 px-5 text-lg text-left font-medium border-b md:w-auto md:ml-8 md:p-0 md:text-sm md:text-left md:border-b-0 md:hover:underline'
                 >
                   Hjem
-                </Link>
-                <Link
-                  href='/om-casen'
-                  className='w-full py-6 px-5 text-lg text-left font-medium border-b md:w-auto md:ml-8 md:p-0 md:text-sm md:text-left md:border-b-0 md:hover:underline'
-                >
-                  Om casen
                 </Link>
               </div>
             )}
