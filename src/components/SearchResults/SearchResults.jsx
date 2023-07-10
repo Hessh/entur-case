@@ -15,8 +15,6 @@ const SearchResults = ({ searchResults, onResultSelect }) => {
     );
   }
 
-  console.log(searchResults)
-
   return (
     <>
       <h2 className="text-lg font-semibold mb-4">Søkeresultater</h2>
