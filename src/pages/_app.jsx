@@ -3,7 +3,6 @@ import Head from 'next/head'
 import focusSource from 'ally.js/amd/style/focus-source'
 
 import '@/styles/globals.css'
-import '../utils/fontawesome'
 
 function App({ Component, pageProps }) {
   React.useEffect(() => {
