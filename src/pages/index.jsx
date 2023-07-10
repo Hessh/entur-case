@@ -33,8 +33,6 @@ const SearchResults = ({ searchResults, onResultSelect }) => {
     );
   }
 
-  // ['railStation', 'onstreetBus', 'onstreetTram', 'metroStation']
-
   return (
     <>
       <h2 className="text-lg font-semibold mb-4">Søkeresultater</h2>
@@ -108,6 +106,7 @@ const DepartureTimes = ({ stopPlace }) => {
     return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   }
 
+  // Vis/skjul situasjoner for avganger
   const toggleSituations = (id) => {
     if(showSituations === id) {
       setShowSituations(false);
