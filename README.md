@@ -3,9 +3,13 @@ Dette er en applikasjon for å finne stoppesteder og se avgangstider ved hjelp a
 
 ## Installasjon
 Klon prosjektet fra GitHub: `git clone https://github.com/din-repo-url`
+
 Gå inn i prosjektmappen: cd `entur-case`
+
 Installer avhengigheter med Yarn: `yarn install`
+
 Start utviklingsserveren: `yarn dev`
+
 Applikasjonen vil kjøre på http://localhost:3000.
 
 ## Beskrivelse
