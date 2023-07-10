@@ -28,8 +28,8 @@ module.exports = {
         radius: '4px'
       },
       boxShadow: {
-        box: '#00000010 0px 2px 10px;',
-        hover: '#00000020 0px 2px 10px;'
+        box: '#00000010 0px 2px 10px',
+        hover: '#00000020 0px 2px 10px'
       }
     },
   },
