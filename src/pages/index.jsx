@@ -106,13 +106,6 @@ const Home = () => {
     }
   };
 
-  // Håndter søkefeil for inspisering
-  useEffect(() => {
-    if (searchError) {
-      console.log(searchError)
-    }
-  }, [searchError]);
-
   return (
     <Layout>
       <div className="container md:min-h-[85vh] md:max-h-[85vh] overflow-y-clip mx-auto py-8 md:grid md:grid-cols-2 ">
